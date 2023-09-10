@@ -5,7 +5,6 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  release:
 
 jobs:
   build:
@@ -19,9 +18,10 @@ jobs:
       run: make
     - name: find
       run: find . -name c2tzx
-    - name: Upload the artifacts
-      uses: skx/github-action-publish-binaries@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
       with:
+        name: binaries
+        path: |
+          ./src/c2tzx
         args: './src/c2tzx'
