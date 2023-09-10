@@ -21,4 +21,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: '.src/c2tzx'
+        args: 'c2tzx'
