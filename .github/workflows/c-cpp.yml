@@ -16,6 +16,8 @@ jobs:
     - name: make
       working-directory: ./src
       run: make
+    - name: find
+      run: find . -name c2tzx
     - name: Upload the artifacts
       uses: skx/github-action-publish-binaries@master
       env:
